@@ -1,0 +1,44 @@
+<h2 class="page-header">Register</h2>
+{{#if errors}}
+    <div class="ui error message">
+        <i class="close icon"></i>
+        <div class="header">
+            Please check required and input issues!
+        </div>
+        <ul class="list">
+        {{#each errors}}
+            <li>{{msg}}.</li>
+        {{/each}}
+        </ul>
+    </div>
+{{/if}}
+  
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <form class="ui form" method="post" action="/users/register">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                 <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password2" placeholder="Confirm Password">
+                    </div>
+                </div>
+                <button type="submit" class="ui fluid large teal submit button">Submit</button>
+            </div>
+
+            <div class="ui error message"></div>
+        </form>
+    </div>
+</div>
